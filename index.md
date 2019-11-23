@@ -1,6 +1,6 @@
 # Slide 1
 
-Slide with some content
+Slide with <span class="highlight">highlight</span>
 
 ---
 

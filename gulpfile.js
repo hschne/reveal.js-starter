@@ -7,11 +7,12 @@ var browserSync = require('browser-sync').create();
 
 gulp.task(
   'vendor',
-  gulp.series(() => {
+  gulp.series(done => {
     gulp.src(['./node_modules/reveal.js/css/**/*']).pipe(gulp.dest('./css'));
     gulp.src(['./node_modules/reveal.js/js/**/*']).pipe(gulp.dest('./js'));
     gulp.src(['./node_modules/reveal.js/plugin/**/*']).pipe(gulp.dest('./plugin'));
     gulp.src(['./node_modules/reveal.js/lib/**/*']).pipe(gulp.dest('./lib'));
+    done();
   }),
 );
 
@@ -66,33 +67,25 @@ gulp.task(
   }),
 );
 
-// JS
 gulp.task('js', gulp.series('js:minify'));
 
-// Browser Sync
-gulp.task(
-  'browserSync',
-  gulp.series(() => {
-    browserSync.init({
-      server: {
-        baseDir: './',
-      },
-    });
-  }),
-);
-
-// Watch
-gulp.task('watch', () => {
+gulp.task('serve', function() {
+  browserSync.init({
+    server: {
+      baseDir: './',
+    },
+  });
   gulp.watch('./scss/**/*.scss', gulp.series('css'));
   gulp.watch(['./js/*.js', '!./js/reveal*.js'], gulp.series('js'));
-  gulp.watch('./*.html', browserSync.reload);
+  gulp.watch('*.html').on('change', browserSync.reload);
+  gulp.watch('*.md').on('change', browserSync.reload);
 });
-
-// Dev
-gulp.task('dev', gulp.series('css', 'js', 'browserSync', 'watch'));
 
 // Default
 gulp.task('default', done => {
   gulp.series('vendor', 'css', 'js');
   done();
 });
+
+// Dev
+gulp.task('dev', gulp.series('default', 'serve'));
