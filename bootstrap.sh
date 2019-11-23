@@ -5,7 +5,7 @@ main() {
   local name; read -e -r name;
   echo ""
   [[ -z name ]] && die "The presentation name must not be empty"
-  msg "Cloning the reveal.js starter..."
+  msg "Cloning Reveal.js Starter repository..."
   git clone "https://github.com/hschne/reveal.js-starter" $name &> /dev/null
   cd $name
   rm -rf .git

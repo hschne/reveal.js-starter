@@ -13,7 +13,7 @@ This template provides a number of quality of life utilities for writing your sl
 To start creating your own slides execute `bootstrap.sh` and specify a name for your presentation.
 
 ```
-curl -sL --proto-redir -all,https https://raw.githubusercontent.com/hschne/reveal.js-starter/master/bootstrap.sh | bash
+bash <(wget -qO- https://raw.githubusercontent.com/hschne/reveal.js-starter/master/bootstrap.sh)
 ```
 
 Alternatively just clone this repository and run `npm install`.
