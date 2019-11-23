@@ -10,15 +10,20 @@
 
 This template provides a number of quality of life utilities for writing your slides (Build & Minification, SASS, [BrowserSync](https://www.browsersync.io/)...), and comes pre-configured with same sane defauls (Markdown Slides, Theming...).
 
-To start creating your own slides clone this repository and run it.
+To start creating your own slides execute `bootstrap.sh` and specify a name for your presentation.
+
+```
+curl -sL --proto-redir -all,https https://raw.githubusercontent.com/hschne/reveal.js-starter/master/bootstrap.sh | bash
+```
+
+Alternatively just clone this repository and run `npm install`.
 
 ```
 git clone https://github.com/hschne/reveal.js-starter
 npm install && npm run serve
 ```
 
-This will start a local [BrowserSync](https://www.browsersync.io/) and preview your slides. To add new slides
-modify [index.html](index.html) or [index.md](index.md). To add your own styles modify [styles.scss](scss/styles.scss).
+Running `npm run serve` will start a local [BrowserSync](https://www.browsersync.io/) and preview your slides. To add new slides modify [index.html](index.html) or [index.md](index.md). To add your own styles modify [styles.scss](scss/styles.scss).
 
 Happy coding!
 
