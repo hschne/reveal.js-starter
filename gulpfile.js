@@ -82,10 +82,7 @@ gulp.task('serve', function() {
 });
 
 // Default
-gulp.task('default', done => {
-  gulp.series('vendor', 'css', 'js');
-  done();
-});
+gulp.task('default', gulp.series('vendor', 'css', 'js'));
 
 // Dev
 gulp.task('dev', gulp.series('default', 'serve'));

@@ -1,72 +1,22 @@
 {
-  "_from": "reveal.js@*",
-  "_id": "reveal.js@3.8.0",
-  "_inBundle": false,
-  "_integrity": "sha512-MQ+UBXIIL9IyBXhkLZWb/AG5h5/BedmnHXHIEavMBawNLVfAayvTrwNlDjGn4tf/CQ2CTJR8jSyIdu4RpfoLpg==",
-  "_location": "/reveal.js",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "range",
-    "registry": true,
-    "raw": "reveal.js@*",
-    "name": "reveal.js",
-    "escapedName": "reveal.js",
-    "rawSpec": "*",
-    "saveSpec": null,
-    "fetchSpec": "*"
-  },
-  "_requiredBy": [
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/reveal.js/-/reveal.js-3.8.0.tgz",
-  "_shasum": "9a2818e366d46237f0e64c00f50a05f2340cd50f",
-  "_spec": "reveal.js@*",
-  "_where": "/home/hschne/Source/slides/__template",
-  "author": {
-    "name": "Hakim El Hattab",
-    "email": "hakim.elhattab@gmail.com",
-    "url": "http://hakim.se"
-  },
-  "bugs": {
-    "url": "https://github.com/hakimel/reveal.js/issues"
-  },
-  "bundleDependencies": false,
-  "deprecated": false,
-  "description": "The HTML Presentation Framework",
-  "devDependencies": {
-    "express": "^4.16.2",
-    "grunt": "^1.0.4",
-    "grunt-autoprefixer": "^3.0.4",
-    "grunt-cli": "^1.3.2",
-    "grunt-contrib-connect": "^2.0.0",
-    "grunt-contrib-cssmin": "^3.0.0",
-    "grunt-contrib-jshint": "^2.0.0",
-    "grunt-contrib-qunit": "^3.1.0",
-    "grunt-contrib-uglify": "^3.3.0",
-    "grunt-contrib-watch": "^1.1.0",
-    "grunt-sass": "^3.0.2",
-    "grunt-zip": "~0.17.1",
-    "load-grunt-tasks": "^4.0.0",
-    "mustache": "^2.3.0",
-    "node-sass": "^4.11.0",
-    "socket.io": "^2.2.0"
-  },
-  "engines": {
-    "node": ">=9.0.0"
-  },
-  "homepage": "http://revealjs.com",
+  "title": "Reveal.js Starter",
   "license": "MIT",
-  "main": "js/reveal.js",
-  "name": "reveal.js",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/hakimel/reveal.js.git"
+  "author": "hschne",
+  "dependencies": {
+    "reveal.js": "*"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^4.0.0",
+    "gulp-clean-css": "3.9.4",
+    "gulp-filter": "5.1.0",
+    "gulp-header": "2.0.5",
+    "gulp-rename": "1.3.0",
+    "gulp-sass": "4.0.1",
+    "gulp-uglify": "3.0.0"
   },
   "scripts": {
-    "build": "grunt",
-    "start": "grunt serve",
-    "test": "grunt test"
-  },
-  "subdomain": "revealjs",
-  "version": "3.8.0"
+    "serve": "gulp dev",
+    "build": "gulp"
+  }
 }
