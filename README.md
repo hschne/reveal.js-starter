@@ -1,5 +1,5 @@
 <h1 align="center">Reveal.js Starter</h1> 
-<p align="center">A opinionated starter template for [Reveal.js](https://github.com/hakimel/reveal.js/)</p>
+<p align="center">A opinionated starter template for <a href="https://github.com/hakimel/reveal.js">Reveal.js</a></p>
 
 <p align="center">
 <a href="https://forthebadge.com"><img src="https://forthebadge.com/images/badges/powered-by-electricity.svg"></a>
