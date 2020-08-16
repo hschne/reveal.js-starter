@@ -3,7 +3,7 @@
   "license": "MIT",
   "author": "hschne",
   "dependencies": {
-    "reveal.js": "*"
+    "reveal.js": "^4.0.2"
   },
   "devDependencies": {
     "browser-sync": "^2.26.3",
