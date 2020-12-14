@@ -2,7 +2,7 @@ name: Check for Updates
 
 on: 
   schedule:
-    cron: '0 8 * * 1' # every friday AM 8:00
+    - cron: '0 8 * * 1' # every friday AM 8:00
       
 jobs:
   check updates:
