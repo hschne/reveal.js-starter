@@ -1,0 +1,18 @@
+name: Check Package
+
+on: 
+  schedule:
+    - cron: '0 8 * * 1' # every friday AM 8:00
+jobs:
+  check updates:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+  
+      - name: Install npm
+        run: npm install
+
+      - name: Check outdated
+        run: npm outdated
+   
