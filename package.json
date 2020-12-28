@@ -3,10 +3,10 @@
   "license": "MIT",
   "author": "hschne",
   "dependencies": {
-    "reveal.js": "^4.0.2"
+    "reveal.js": "^4.1.0"
   },
   "devDependencies": {
-    "browser-sync": "^2.26.3",
+    "browser-sync": "^2.26.13",
     "gulp": "^4.0.0",
     "gulp-clean-css": "3.9.4",
     "gulp-filter": "5.1.0",
