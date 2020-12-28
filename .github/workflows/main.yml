@@ -15,5 +15,4 @@ jobs:
         run: npm install
 
       - name: Check outdated
-        run: npm outdated
-   
+        run: npm outdated reveal.js
