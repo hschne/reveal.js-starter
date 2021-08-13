@@ -3,23 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-
     <title>Title</title>
-
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/reveal.css" />
-    <link rel="stylesheet" href="css/theme/black.css" />
-
-    <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
-
-    <!-- Custom styling and tweaks -->
-    <link rel="stylesheet" href="css/style.min.css" />
-
-    <!-- Plugins -->
-    <script src="plugin/markdown/markdown.js"></script>
-    <script src="plugin/notes/notes.js"></script>
-    <script src="plugin/highlight/highlight.js"></script>
+    <link rel="stylesheet" href="out/revealjs-starter.css" />
   </head>
   <body>
     <div class="reveal">
@@ -28,24 +13,9 @@
           <h2>{{title}}</h2>
           <aside class="notes"></aside>
         </section>
-
         <section data-markdown="index.md"></section>
       </div>
     </div>
-
-    <script src="js/reveal.js"></script>
-
-    <script>
-      // More info about config & dependencies:
-      // - https://github.com/hakimel/reveal.js#configuration
-      // - https://github.com/hakimel/reveal.js#dependencies
-      Reveal.configure({
-        transition: 'none',
-        history: 'true',
-      });
-      Reveal.initialize({
-        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
-      });
-    </script>
+    <script src="out/revealjs-starter.js" />
   </body>
 </html>
