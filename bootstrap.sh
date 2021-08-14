@@ -9,7 +9,7 @@ main() {
   git clone "https://github.com/hschne/reveal.js-starter" $name &> /dev/null
   cd $name
   rm -rf .git
-  rm README.md js/.gitkeep css/.gitkeep css/theme/.gitkeep img/.gitkeep plugin/.gitkeep
+  rm README.md js/.gitkeep css/.gitkeep img/.gitkeep plugin/.gitkeep
 
   msg "Installing dependencies..."
   npm install &> /dev/null
