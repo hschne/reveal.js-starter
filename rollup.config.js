@@ -1,13 +1,16 @@
-import babel from "@rollup/plugin-babel";
-import eslint from "@rollup/plugin-eslint";
-import resolve from "@rollup/plugin-node-resolve";
-import commonjs from "@rollup/plugin-commonjs";
-import { terser } from "rollup-plugin-terser";
-import scss from "rollup-plugin-scss";
-import postcss from "rollup-plugin-postcss";
 import autoprefixer from "autoprefixer";
+import babel from "@rollup/plugin-babel";
+import commonjs from "@rollup/plugin-commonjs";
+import copy from "rollup-plugin-copy";
+import eslint from "@rollup/plugin-eslint";
 import livereload from "rollup-plugin-livereload";
+import postcss from "rollup-plugin-postcss";
+import resolve from "@rollup/plugin-node-resolve";
+import scss from "rollup-plugin-scss";
 import serve from "rollup-plugin-serve";
+import { terser } from "rollup-plugin-terser";
+import filesize from "rollup-plugin-filesize";
+import { visualizer } from "rollup-plugin-visualizer";
 
 import pkg from "./package.json";
 
@@ -19,6 +22,19 @@ const banner = `/*
  * ${pkg.license} License
  */
 `;
+
+const copyTargets = ["league-gothic", "source-sans-pro"].flatMap((font) => {
+  return [
+    {
+      src: `./node_modules/reveal.js/dist/theme/fonts/${font}/*.css`,
+      dest: `out/fonts/${font}`,
+    },
+    {
+      src: `./node_modules/reveal.js/dist/theme/fonts/${font}/*.woff`,
+      dest: `out/fonts/${font}`,
+    },
+  ];
+});
 
 const plugins = [
   resolve(),
@@ -37,23 +53,26 @@ const plugins = [
     plugins: [autoprefixer()],
     inject: false,
     extract: true,
-    sourceMap: "inline",
-    minimize: false,
+    sourceMap: false,
+    minimize: true,
+  }),
+  copy({
+    targets: copyTargets,
   }),
   serve(),
   livereload(),
+  filesize(),
+  visualizer(),
 ];
-
-const input = "js/revealjs-starter";
 
 export default [
   {
-    input: input,
+    input: "js/revealjs-starter",
     output: {
       file: "out/revealjs-starter.js",
-      format: "umd",
+      format: "esm",
       name: "Reveal.js Starter",
-      sourcemap: true,
+      sourcemap: false,
       banner: banner,
     },
     plugins: plugins,
