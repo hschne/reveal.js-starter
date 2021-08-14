@@ -8,7 +8,7 @@
 
 ## Getting Started
 
-This template provides a number of quality of life utilities for writing your slides (Build & Minification, SASS, [BrowserSync](https://www.browsersync.io/)...), and comes pre-configured with sane defauls (Markdown Slides, Theming...).
+This template provides a number of quality of life utilities for writing your slides (Build & Minification, SASS, [LiveReload](https://www.browsersync.io/)...), and comes pre-configured with sane defauls (Markdown Slides, Theming...).
 
 To start creating your own slides execute `bootstrap.sh` and specify a name for your presentation.
 

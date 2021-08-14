@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Create Reveal.js presentations easily",
   "scripts": {
-    "watch": "rollup -c -w",
-    "build": "rollup -c"
+    "serve": "browser-sync start --server --files 'out/*.css,out/*.js,index.md,index.html' | rollup -c -w",
+    "build": "NODE_ENV=production rollup -c"
   },
   "repository": {
     "type": "git",
@@ -27,19 +27,16 @@
     "@rollup/plugin-eslint": "^8.0.1",
     "@rollup/plugin-node-resolve": "^13.0.4",
     "autoprefixer": "^10.3.1",
+    "browser-sync": "^2.27.5",
     "eslint": "^7.32.0",
     "less": "^4.1.1",
     "node-sass": "^6.0.1",
     "postcss": "^8.3.6",
     "rollup": "^2.56.1",
     "rollup-plugin-copy": "^3.4.0",
-    "rollup-plugin-filesize": "^9.1.1",
-    "rollup-plugin-livereload": "^2.0.5",
     "rollup-plugin-postcss": "^4.0.0",
     "rollup-plugin-scss": "^3.0.0",
-    "rollup-plugin-serve": "^1.1.0",
     "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-visualizer": "^5.5.2",
     "sass": "^1.37.5"
   }
 }
