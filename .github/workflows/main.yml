@@ -1,18 +1,20 @@
-name: Check for Updates
+name: Main
 
-on: 
-  schedule:
-    - cron: '0 12 * * 1' 
+on:
+  push:
+    branches: [ master ]
       
 jobs:
-  check_updates:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-  
-      - name: Install npm
-        run: npm install
 
-      - name: Check outdated
-        run: npm outdated reveal.js
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+
+      - name: Build
+        run: npm run build
