@@ -16,14 +16,14 @@ To start creating your own slides execute `bootstrap.sh` and specify a name for 
 bash <(wget -qO- https://raw.githubusercontent.com/hschne/reveal.js-starter/master/bootstrap.sh)
 ```
 
-Alternatively just clone this repository and run `npm install`.
+Alternatively clone this repository and run `npm install`.
 
 ```
 git clone https://github.com/hschne/reveal.js-starter
 npm install && npm run serve
 ```
 
-Running `npm run serve` will start a local [BrowserSync](https://www.browsersync.io/) and preview your slides. To add new slides modify [index.html](index.html) or [index.md](index.md). To add your own styles modify [styles.scss](scss/styles.scss).
+Running `npm run serve` will start a local [BrowserSync](https://www.browsersync.io/) and preview your slides. To add new slides modify `index.html` or `index.md`. To add your own styles modify `stylesheets/styles.scss`.
 
 Happy coding!
 
