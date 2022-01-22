@@ -1,22 +1,38 @@
 #!/usr/bin/env bash
 
+set -e 
+
 main() {
-  printf "Please specify a name for your presentation: "
-  local name; read -e -r name;
-  echo ""
+  local name;
+  if [[ ! -z $1 ]]; then
+    name=$1
+  else 
+    printf "Please specify a name for your presentation: "
+    read -e -r name;
+    echo ""
+  fi
   [[ -z name ]] && die "The presentation name must not be empty"
-  msg "Cloning Reveal.js Starter repository..."
-  git clone "https://github.com/hschne/reveal.js-starter" $name &> /dev/null
-  cd $name
-  rm -rf .git
-  rm README.md img/.gitkeep
+
+  msg "Cloning Reveal.js Starter..."
+  git clone "https://github.com/hschne/reveal.js-starter" "$name" &> /dev/null
+  cd "$name" && \
+    rm -rf .git .github && \
+    rm README.md img/.gitkeep bootstrap.sh
 
   msg "Installing dependencies..."
   npm install &> /dev/null
-  echo ""
 
-  success "Presentation sucessfully set up in '$name'"
-  msg "Run 'npm run serve' to open it in your browser."
+  echo ""
+  success "Presentation sucessfully set up in '$name'! 🚀"
+  cat <<-EOF
+
+To open it in your browser run:
+  cd '$name'
+  npm run serve
+
+EOF
+
+success "Happy presenting!"
 }
 
 msg() {
@@ -28,6 +44,7 @@ success() {
   local clear="\e[0m"
   printf "${green}$1${clear}\n"
 }
+
 err() {
   local red="\e[38;5;9m"
   local clear="\e[0m"

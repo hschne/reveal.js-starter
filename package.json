@@ -1,6 +1,6 @@
 {
   "name": "revealjs-starter",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Create Reveal.js presentations easily",
   "scripts": {
     "serve": "browser-sync start --server --files 'out/*.css,out/*.js,index.md,index.html' | rollup -c -w",
