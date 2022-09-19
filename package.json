@@ -28,7 +28,7 @@
     "@rollup/plugin-node-resolve": "^13.3.0",
     "autoprefixer": "^10.4.0",
     "browser-sync": "^2.27.5",
-    "eslint": "^8.22.0",
+    "eslint": "^8.23.1",
     "less": "^4.1.2",
     "postcss": "^8.4.4",
     "rollup": "^2.78.0",
